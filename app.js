@@ -8,9 +8,9 @@ const helmet =require('helmet')
 const xss =require('xss-clean')
 const hpp=require('hpp')
 const cors=require('cors')
+const mongoose = require('mongoose')
 
 //security middleware Implementation
-
 app.use(cors());
 app.use(helmet());
 app.use(xss());
@@ -25,6 +25,18 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
+//Mongodb database connection
+
+let URI = "mongodb://localhost:27017/CroftShop";
+let options = { user: '', pass: '' };
+
+mongoose.connect(URI, options)
+	.then(() => {
+		console.log("Connection successful");
+	})
+	.catch((error) => {
+		console.error("Connection error:", error);
+	});
 
 
 app.use("/api/v1",router);
