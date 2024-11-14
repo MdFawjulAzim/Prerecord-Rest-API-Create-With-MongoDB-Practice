@@ -1,6 +1,7 @@
 const express =require('express');
 const router =require("./routes/api.js")
 const app = new express();
+const bodyParser = require("body-parser");
 
 //security middleware Import
 const rateLimit =require('express-rate-limit')
@@ -16,6 +17,7 @@ app.use(cors());
 app.use(helmet());
 app.use(xss());
 app.use(hpp());
+app.use(bodyParser.json());
 
 
 //Request Rate Limit
