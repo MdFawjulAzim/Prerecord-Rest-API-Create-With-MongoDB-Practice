@@ -3,25 +3,25 @@ const studentModel = require('../models/studentModel.js');
 
 //c=Create
 exports.InsertStudent = async (req, res) => {
-    const reqBody = req.body;  // Get the data from the request body
-
+    const reqBody = req.body;
     try {
-        // Await the result of the create method
-        const data = await studentModel.create(reqBody);
-
-        // Respond with success if the student is created
-        res.status(201).json({
+        // Using await to directly get the data from the create method
+        let data = await studentModel.create(reqBody);
+        
+        // Success response
+        return res.status(201).json({
             status: "success",
             data: data
         });
     } catch (err) {
-        // Catch and handle any error during student creation
-        res.status(400).json({
-            status: "fail",
-            data: err.message  // Send error message as part of the response
+        // Error handling if something goes wrong with the database operation
+        return res.status(500).json({
+            status: "failed",
+            data: err
         });
     }
 };
+
 
 
 //r=Read
