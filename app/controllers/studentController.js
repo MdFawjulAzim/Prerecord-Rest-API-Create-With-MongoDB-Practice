@@ -1,5 +1,7 @@
 const studentModel = require('../models/studentModel.js');
+//CRUD
 
+//c=Create
 exports.InsertStudent = async (req, res) => {
     const reqBody = req.body;  // Get the data from the request body
 
@@ -17,6 +19,31 @@ exports.InsertStudent = async (req, res) => {
         res.status(400).json({
             status: "fail",
             data: err.message  // Send error message as part of the response
+        });
+    }
+};
+
+
+//r=Read
+
+exports.ReadStudent = async (req, res) => {
+    try {
+        let query = {}; // You can modify the query here to filter students if needed
+        let projection = "Name Roll Class Remarks"; // Fields to return
+
+        // Fetching the data using await
+        const result = await studentModel.find(query, projection);
+
+        // Return the result with success status
+        res.status(200).json({
+            status: "success",
+            data: result
+        });
+    } catch (err) {
+        // Error handling
+        res.status(500).json({
+            status: "fail",
+            data: err.message
         });
     }
 };
