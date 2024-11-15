@@ -9,5 +9,6 @@ router.post('/hello2',helloController.Hello2);
 router.post('/InsertStudent',studentController.InsertStudent);
 router.get('/ReadStudent',studentController.ReadStudent);
 router.post('/UpdateStudent/:id',studentController.UpdateStudent);
+router.get('/DeleteStudent/:id',studentController.DeleteStudent);
 
 module.exports = router;

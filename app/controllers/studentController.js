@@ -48,6 +48,7 @@ exports.ReadStudent = async (req, res) => {
     }
 };
 
+//u=Update
 exports.UpdateStudent = async (req, res) => {
     let id = req.params.id;
     let QUERY = { _id: id };
@@ -66,3 +67,25 @@ exports.UpdateStudent = async (req, res) => {
         message: "No student found or data is the same"
     }); 
 }
+
+//d=Delete
+
+exports.DeleteStudent = async (req, res) => {
+    let id = req.params.id;
+    let query = { _id: id };
+
+    const data = await studentModel.deleteOne(query);
+    if (data) {
+        return res.status(200).json({
+            status: "success",
+            data: data
+        });
+    }
+    // This code is executed even after sending a response
+    return res.status(404).json({
+        status: "fail",
+        message: "No student found"
+    }); 
+}; 
+
+
