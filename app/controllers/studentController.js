@@ -47,3 +47,22 @@ exports.ReadStudent = async (req, res) => {
         });
     }
 };
+
+exports.UpdateStudent = async (req, res) => {
+    let id = req.params.id;
+    let QUERY = { _id: id };
+    let reqBody = req.body;
+    
+    const data = await studentModel.updateOne(QUERY, reqBody);
+    if (data) {
+        return res.status(200).json({
+            status: "success",
+            data: data
+        });
+    }
+    // This code is executed even after sending a response
+    return res.status(404).json({
+        status: "fail",
+        message: "No student found or data is the same"
+    }); 
+}

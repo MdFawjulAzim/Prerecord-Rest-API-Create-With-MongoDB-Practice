@@ -8,5 +8,6 @@ router.post('/hello2',helloController.Hello2);
 
 router.post('/InsertStudent',studentController.InsertStudent);
 router.get('/ReadStudent',studentController.ReadStudent);
+router.post('/UpdateStudent/:id',studentController.UpdateStudent);
 
 module.exports = router;
