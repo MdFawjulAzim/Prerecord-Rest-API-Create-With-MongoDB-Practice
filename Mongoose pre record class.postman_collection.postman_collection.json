@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "1ab6de7a-c14f-4d89-8bfb-121d524cc444",
+		"name": "Mongoose pre record class",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38179196"
+	},
+	"item": [
+		{
+			"name": "Auth Token Issue",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Name\":\"akash\",\r\n  \"Roll\":\"676\"\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/TokenIssue",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"TokenIssue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert Data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token-key",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzE3NTIxMTIsImRhdGUiOnsiTmFtZSI6IlJhYmJpbCBIYXNhbiIsIkNpdHkiOiJEaGFrYSIsImFkbWluIjp0cnVlfSwiaWF0IjoxNzMxNzQ4NTEyfQ.cMDSekDTTgl4Uu7hnREZX8kcvxS10pBz5-FNYNuDz7o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Name\": \"akash tt\",\r\n  \"Roll\": \"5\",\r\n  \"Class\": 106\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/InsertStudent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"InsertStudent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Custom validation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token-key",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzE3NTIxMTIsImRhdGUiOnsiTmFtZSI6IlJhYmJpbCBIYXNhbiIsIkNpdHkiOiJEaGFrYSIsImFkbWluIjp0cnVlfSwiaWF0IjoxNzMxNzQ4NTEyfQ.cMDSekDTTgl4Uu7hnREZX8kcvxS10pBz5-FNYNuDz7o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\":\"fawjul\",\r\n    \"Roll\":\"36\",\r\n    \"Mobile\":\"016442136172\",\r\n    \"Class\": \"Class\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/InsertStudent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"InsertStudent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Regex Custom validation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token-key",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzE3NTIxMTIsImRhdGUiOnsiTmFtZSI6IlJhYmJpbCBIYXNhbiIsIkNpdHkiOiJEaGFrYSIsImFkbWluIjp0cnVlfSwiaWF0IjoxNzMxNzQ4NTEyfQ.cMDSekDTTgl4Uu7hnREZX8kcvxS10pBz5-FNYNuDz7o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\":\"fawjul\",\r\n    \"Roll\":\"36\",\r\n    \"Mobile\":\"+8801644213617\",\r\n    \"Class\": \"Class\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/InsertStudent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"InsertStudent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token-key",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzE3NTIxMTIsImRhdGUiOnsiTmFtZSI6IlJhYmJpbCBIYXNhbiIsIkNpdHkiOiJEaGFrYSIsImFkbWluIjp0cnVlfSwiaWF0IjoxNzMxNzQ4NTEyfQ.cMDSekDTTgl4Uu7hnREZX8kcvxS10pBz5-FNYNuDz7o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Name\": \"John\",\r\n  \"Roll\": \"Student\",\r\n  \"Class\": \"10\",\r\n  \"Remark\": \"Excellent performance\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/ReadStudent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"ReadStudent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token-key",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzE3NTIxMTIsImRhdGUiOnsiTmFtZSI6IlJhYmJpbCBIYXNhbiIsIkNpdHkiOiJEaGFrYSIsImFkbWluIjp0cnVlfSwiaWF0IjoxNzMxNzQ4NTEyfQ.cMDSekDTTgl4Uu7hnREZX8kcvxS10pBz5-FNYNuDz7o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Name\":\"akash\",\r\n  \"Roll\":\"5\"\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/UpdateStudent/6737a9187494c6b0e49652be",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"UpdateStudent",
+						"6737a9187494c6b0e49652be"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token-key",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzE3NTIxMTIsImRhdGUiOnsiTmFtZSI6IlJhYmJpbCBIYXNhbiIsIkNpdHkiOiJEaGFrYSIsImFkbWluIjp0cnVlfSwiaWF0IjoxNzMxNzQ4NTEyfQ.cMDSekDTTgl4Uu7hnREZX8kcvxS10pBz5-FNYNuDz7o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Name\":\"akash\",\r\n  \"Roll\":\"676\"\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/DeleteStudent/67374292f017420349fa582l",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"DeleteStudent",
+						"67374292f017420349fa582l"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateToken",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Name\":\"akash\",\r\n  \"Roll\":\"676\"\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/CreateToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"CreateToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DecodeToken",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token-key",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzE3NDI5NzQsImRhdGUiOnsiTmFtZSI6IlJhYmJpbCBIYXNhbiIsIkNpdHkiOiJEaGFrYSIsImFkbWluIjp0cnVlfSwiaWF0IjoxNzMxNzQyOTY0fQ.BIvThq61GFlqEWOP5wu0_dC2UKvnehdEu7Hzi13pV3s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Name\":\"akash\",\r\n  \"Roll\":\"676\"\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/DecodeToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"DecodeToken"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
