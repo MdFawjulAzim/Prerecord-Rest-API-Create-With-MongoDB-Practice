@@ -12,6 +12,10 @@ router.get('/ReadStudent',studentController.ReadStudent);
 router.post('/UpdateStudent/:id',studentController.UpdateStudent);
 router.get('/DeleteStudent/:id',studentController.DeleteStudent);
 
+//Create JWT token
 router.get('/CreateToken',JWTPractice.CreateToken);
+
+//Decode JWT token
+router.get('/DecodeToken',JWTPractice.DecodeToken);
 
 module.exports = router;
